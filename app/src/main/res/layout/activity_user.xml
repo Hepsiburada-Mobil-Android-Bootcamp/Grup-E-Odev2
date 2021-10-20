@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".UserActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="com.android.market.ui.fragments.LoginPageFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="317dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
