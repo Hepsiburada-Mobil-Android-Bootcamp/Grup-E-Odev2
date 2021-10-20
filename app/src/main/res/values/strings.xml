@@ -1,3 +1,6 @@
 <resources>
+
     <string name="app_name">Market</string>
+    <string name="FoodGrocery">Food Grocery</string>
+    <string name="text">Login To Your Account</string>
 </resources>
