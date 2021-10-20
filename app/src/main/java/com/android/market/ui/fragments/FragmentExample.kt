@@ -1,4 +1,4 @@
-package com.android.market.ui
+package com.android.market.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,7 +23,7 @@ class FragmentExample :Fragment(R.layout.example_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val product=Product("kitap","kitap","asdsad",123,"16")
+        val product=Product("kitap","kitap","asdsad",123,"16","fsdfsddfsds","154.00")
         put("3",product)
 
     }

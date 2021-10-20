@@ -8,7 +8,7 @@ import retrofit2.http.*
 interface RetrofitService {
 
     @GET("products")
-    fun getAllCharacters(): Call<Array<Product>>
+    fun getAllProducts(): Call<Array<Product>>
 
     @GET("products/{id}")
     fun getProduct(): Call<Product>
