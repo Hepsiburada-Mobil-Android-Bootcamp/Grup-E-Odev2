@@ -9,13 +9,20 @@ interface RetrofitService {
 
     @GET("products")
     fun getAllCharacters(): Call<Array<Product>>
+
+    @GET("products/{id}")
+    fun getProduct(): Call<Product>
+
     @POST("/products")
     fun createProduct(
         @Body product: Product
     ): Call<Product>
-    @FormUrlEncoded
+
     @PUT("products/{id}")
     fun updateProduct(@Path("id") id:String,
-    @Field("name")name:String):Call<Product>
+    @Body product: Product):Call<Product>
+
+    @DELETE("products/{id}")
+    fun deleteProduct(@Path("id")id:String):Call<Product>
 
 }

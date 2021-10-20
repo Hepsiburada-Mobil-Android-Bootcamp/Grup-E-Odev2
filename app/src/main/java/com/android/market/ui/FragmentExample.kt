@@ -23,33 +23,45 @@ class FragmentExample :Fragment(R.layout.example_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        put()
+        val product=Product("kitap","kitap","asdsad",123,"16")
+        put("3",product)
 
     }
 }
 
-fun post(){
-    val product=Product("kitap","kitap","asdsad",123,"16")
-    Retrofit.service.createProduct(product).enqueue(object:Callback<Product>{
-        override fun onResponse(call: Call<Product>, response: Response<Product>) {
-            println(response.body())
-        }
+    fun post(product: Product){
+        Retrofit.service.createProduct(product).enqueue(object:Callback<Product>{
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                println(response.body())
+            }
 
-        override fun onFailure(call: Call<Product>, t: Throwable) {
-            println(t.message)
-        }
-    })
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                println(t.message)
+            }
+        })
 }
-fun put(){
-    val product=Product("kitap","kitap","asdsad",123,"16")
-    Retrofit.service.updateProduct("17","serkan").enqueue(object:Callback<Product>{
-        override fun onResponse(call: Call<Product>, response: Response<Product>) {
-            println(response.body())
-        }
+    fun put(id:String,product: Product){
 
-        override fun onFailure(call: Call<Product>, t: Throwable) {
-            println(t.message)
-        }
+        Retrofit.service.updateProduct("$id",product).enqueue(object:Callback<Product>{
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                println(response.body())
+            }
 
-    })
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                println(t.message)
+            }
+
+        })
+    fun delete(id:String) {
+        Retrofit.service.deleteProduct("$id").enqueue(object : Callback<Product> {
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                println(response.body())
+            }
+
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                println(t.message)
+            }
+
+        })
+    }
 }
