@@ -6,6 +6,10 @@
 
     <fragment
         android:id="@+id/fragmentExample"
-        android:name="com.android.market.ui.FragmentExample"
+        android:name="com.android.market.ui.fragments.FragmentExample"
         android:label="FragmentExample" />
+    <fragment
+        android:id="@+id/addNewProductFragment"
+        android:name="com.android.market.ui.fragments.AddNewProductFragment"
+        android:label="AddNewProductFragment" />
 </navigation>
