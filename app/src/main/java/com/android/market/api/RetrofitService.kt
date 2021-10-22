@@ -11,7 +11,7 @@ interface RetrofitService {
     fun getAllProducts(): Call<Array<Product>>
 
     @GET("products/{id}")
-    fun getProduct(): Call<Product>
+    fun getProduct(@Path("id") id:String): Call<Product>
 
     @POST("/products")
     fun createProduct(
@@ -19,10 +19,8 @@ interface RetrofitService {
     ): Call<Product>
 
     @PUT("products/{id}")
-    fun updateProduct(@Path("id") id:String,
-    @Body product: Product):Call<Product>
+    fun updateProduct(@Path("id") id: String,@Body product: Product):Call<Product>
 
     @DELETE("products/{id}")
-    fun deleteProduct(@Path("id")id:String):Call<Product>
-
+    fun deleteProduct(@Path("id") id:String): Call<Product>
 }
