@@ -3,4 +3,9 @@
     <string name="app_name">Market</string>
     <string name="FoodGrocery">Food Grocery</string>
     <string name="text">Login To Your Account</string>
+    <string name="signUpText">Sign Up For Free</string>
+    <string name="forgot_pass">Forgot Your Password?</string>
+    <string name="by_tapping_">Or Continue With</string>
+    <string name="existingAccount">already have an account?</string>
+
 </resources>
