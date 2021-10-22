@@ -3,4 +3,17 @@
     <string name="product_title">Product title</string>
     <string name="product_subtitle">Product Subtitle</string>
     <string name="category">category</string>
+    <!--Category Spinner -->
+    <string-array name="category">
+        <item>Select Item</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
 </resources>

@@ -1,14 +1,7 @@
 package com.android.market.data
 
-import java.security.acl.Owner
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class Product(
-    val productName: String,
-    val category: String,
-    val url: String,
-    val stock: Int,
-    val id: String,
-    val detail: String,
-    val price: String
-)
-
+@Parcelize
+data class Product(val productName:String,val category:String,val url:String,val stock:Int,val id:String,val detail:String,val price:String):Parcelable

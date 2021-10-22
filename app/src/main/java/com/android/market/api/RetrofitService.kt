@@ -2,7 +2,6 @@ package com.android.market.api
 
 import com.android.market.data.Product
 
-
 import retrofit2.Call
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
@@ -17,8 +16,7 @@ interface RetrofitService {
     fun getAllProducts(): Call<List<Product>>
 
     @GET("products/{id}")
-    fun getProduct(): Call<Product>
-
+    fun getProduct(@Path("id") id:String): Call<Product>
 
     @POST("/products")
     fun createProduct(
@@ -31,8 +29,5 @@ interface RetrofitService {
 
     @DELETE("products/{id}")
     fun deleteProduct(@Path("id")id:String):Call<Product>
-
-
-
 
 }
