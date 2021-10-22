@@ -23,7 +23,7 @@ class FragmentExample :Fragment(R.layout.example_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val product=Product("kitap","kitap","asdsad",123,"16","fsdfsddfsds","154.00")
+        val product=Product("deneme","kitap","asdsad",123,"16","fsdfsddfsds","154.00")
         put("3",product)
 
     }
