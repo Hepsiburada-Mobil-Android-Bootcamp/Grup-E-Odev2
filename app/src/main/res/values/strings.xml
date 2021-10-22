@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Market</string>
+    <string name="product_title">Product title</string>
+    <string name="product_subtitle">Product Subtitle</string>
+    <string name="category">category</string>
     <!--Category Spinner -->
     <string-array name="category">
         <item>Select Item</item>

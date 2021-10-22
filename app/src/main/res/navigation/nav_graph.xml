@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentExample">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/fragmentExample"
@@ -17,6 +17,11 @@
         android:id="@+id/addNewProductFragment"
         android:name="com.android.market.ui.fragments.AddNewProductFragment"
         android:label="AddNewProductFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.android.market.ui.home.HomeFragment"
+        android:label="HomeFragment" />
+
 
     <fragment
         android:id="@+id/detailFragment"
