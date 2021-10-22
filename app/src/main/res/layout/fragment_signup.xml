@@ -143,7 +143,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/password_input"
+        android:id="@+id/password_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -189,14 +189,14 @@
 
 
     <RelativeLayout
-        android:id="@+id/rePasswordLayout"
+        android:id="@+id/rePassword_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:background="@drawable/form_border"
-        app:layout_constraintTop_toBottomOf="@+id/password_input"
+        app:layout_constraintTop_toBottomOf="@+id/password_layout"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="72dp">
 
@@ -205,7 +205,7 @@
             android:id="@+id/rePassword_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/password_icon"
+            android:layout_toRightOf="@+id/rePassword_icon"
             android:background="@android:color/transparent"
             android:fontFamily="@font/viga"
             android:hint="Re-Password"
