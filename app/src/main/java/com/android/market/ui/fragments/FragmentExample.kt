@@ -46,7 +46,7 @@ class FragmentExample :Fragment(R.layout.example_fragment) {
         }
         binding.buttonDetail.setOnClickListener{
 
-            findNavController().navigate(FragmentExampleDirections.actionFragmentExampleToDetailFragment(detailViewModel.product.value!!))
+            //findNavController().navigate(FragmentExampleDirections.actionFragmentExampleToDetailFragment(detailViewModel.product.value!!))
         }
 
     }

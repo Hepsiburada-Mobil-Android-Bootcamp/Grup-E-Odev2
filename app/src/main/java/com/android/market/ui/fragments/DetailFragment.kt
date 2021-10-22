@@ -66,7 +66,7 @@ class DetailFragment : Fragment() {
                 .setIcon(R.drawable.ic_delete)
                 .setPositiveButton("Delete",
                     DialogInterface.OnClickListener { dialog, whichButton ->
-                        findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToFragmentExample())
+                        findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToHomeFragment())
                         detailViewModel.deleteProduct(args.product.id)
                     })
                 .setNegativeButton("Cancel",

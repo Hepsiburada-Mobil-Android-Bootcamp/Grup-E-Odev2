@@ -7,12 +7,7 @@
     <fragment
         android:id="@+id/fragmentExample"
         android:name="com.android.market.ui.fragments.FragmentExample"
-        android:label="FragmentExample" >
-        <action
-            android:id="@+id/action_fragmentExample_to_detailFragment"
-            app:destination="@id/detailFragment"/>
-
-    </fragment>
+        android:label="FragmentExample" />
     <dialog
         android:id="@+id/addNewProductFragment"
         android:name="com.android.market.ui.fragments.AddNewProductFragment"
@@ -20,7 +15,11 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.android.market.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 
 
     <fragment
@@ -31,12 +30,12 @@
             android:name="product"
             app:argType="com.android.market.data.Product" />
         <action
-            android:id="@+id/action_detailFragment_to_fragmentExample"
-            app:destination="@id/fragmentExample"
-            app:popUpTo="@id/fragmentExample"/>
-        <action
             android:id="@+id/action_detailFragment_to_editProductDetailFragment"
             app:destination="@id/editProductDetailFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"/>
     </fragment>
     <fragment
         android:id="@+id/editProductDetailFragment"

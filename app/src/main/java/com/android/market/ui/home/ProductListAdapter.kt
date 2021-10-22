@@ -12,6 +12,8 @@ import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.DataBindingUtil.*
+import androidx.navigation.findNavController
+
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.android.market.R
@@ -48,6 +50,9 @@ class ProductListAdapter (private val productsList:List<Product>) :
             .load(productsList[position].url)
             .into(binding.imgProduct)
         binding.productName.text = productsList[position].productName
+        holder.itemView.setOnClickListener{
+            it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(productsList[position]))
+        }
     }
 
 
