@@ -30,8 +30,8 @@ class AddNewProductFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Spinner Adapter
-        ArrayAdapter.createFromResource(view.context,R.array.category,android.R.layout.simple_spinner_item).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        ArrayAdapter.createFromResource(view.context,R.array.category,android.R.layout.simple_spinner_item).also {
+                adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.categorySpinner.adapter = adapter
         }
         binding.categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{

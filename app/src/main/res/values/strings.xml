@@ -6,24 +6,21 @@
     <!--Category Spinner -->
     <string-array name="category">
         <item>Select Item</item>
-        <item>Mercury</item>
         <item>Meyve</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Sebze</item>
+        <item>İçecek</item>
+        <item>Temel Gıda</item>
+        <item>Hazır Gıda</item>
+        <item>Bakliyat</item>
+        <item>Et</item>
+        <item>Paketli Gıda</item>
     </string-array>
-    <string-array name="categoryNames">
-        <item>Mercury</item>
-        <item>Meyve</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
+
+    <string name="food">EFSANE LEZZETLER</string>
+    <string name="delivery">HIZLI TESLİMAT</string>
+    <string name="payment">HIZLI ÖDEME</string>
+    <string name="lorem1">Efsane lezzetler tek tıkla kapına gelsin</string>
+    <string name="lorem2">Temassız ve Hızlı teslimat ile güvenli ödeme seçenekleri</string>
+    <string name="lorem3">Tek tıkla öde, bekleme!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
