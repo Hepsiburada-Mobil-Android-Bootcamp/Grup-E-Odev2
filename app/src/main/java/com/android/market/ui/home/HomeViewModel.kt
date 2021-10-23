@@ -4,6 +4,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.android.market.R
 import com.android.market.api.Retrofit
 import com.android.market.data.Product
 import retrofit2.Call
