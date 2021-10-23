@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.market.R
 import com.android.market.data.Product
 
-class CategoryListAdapter(private val productsList:List<Product>,val homeVM:HomeViewModel) : RecyclerView.Adapter<CategoryListAdapter.CategoryViewHolder>(){
+class CategoryListAdapter(private val productsList: List<Product>, val homeVM:HomeViewModel) : RecyclerView.Adapter<CategoryListAdapter.CategoryViewHolder>(){
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -26,7 +26,6 @@ class CategoryListAdapter(private val productsList:List<Product>,val homeVM:Home
             homeVM.category(productsList[position].category)
         }
     }
-
 
     override fun getItemCount(): Int = productsList.size
 
