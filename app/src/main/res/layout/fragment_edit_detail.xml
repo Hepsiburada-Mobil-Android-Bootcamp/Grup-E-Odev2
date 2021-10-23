@@ -122,8 +122,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rect_add"
-                    android:textSize="@dimen/_14sdp"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textSize="@dimen/_14sdp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -176,7 +176,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/buttonAdd"
+                android:id="@+id/buttonApply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"

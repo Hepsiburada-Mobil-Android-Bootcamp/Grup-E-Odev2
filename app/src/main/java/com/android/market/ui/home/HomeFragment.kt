@@ -36,13 +36,14 @@ class HomeFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewmodel.productlist()
         viewmodel.product.observe(viewLifecycleOwner,{
-            binding.recycler2.adapter=ProductListAdapter(it).also {
+            binding.recycler1.adapter=CategoryListAdapter(resources.getStringArray(R.array.categoryNames).toList(),viewmodel)
+
+            val list:List<Product> = viewmodel.product.value as List<Product>
+            binding.recycler2.adapter=ProductListAdapter(list).also {
                 it.notifyDataSetChanged()
             }
         })
-        viewmodel.product.observe(viewLifecycleOwner,{
-            binding.recycler1.adapter=CategoryListAdapter(it,viewmodel)
-        })
+
         binding.addButton.setOnClickListener{
             val addNewProductFragment = AddNewProductFragment()
             addNewProductFragment.setStyle(

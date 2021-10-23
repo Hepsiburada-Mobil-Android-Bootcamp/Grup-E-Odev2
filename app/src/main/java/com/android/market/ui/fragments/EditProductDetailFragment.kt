@@ -7,19 +7,25 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.android.market.R
+import com.android.market.data.Product
 import com.android.market.databinding.FragmentEditDetailBinding
 import com.android.market.ui.viewModels.EditProductViewModel
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_edit_detail.*
 
 class EditProductDetailFragment : Fragment() {
     private val binding : FragmentEditDetailBinding by lazy { FragmentEditDetailBinding.inflate(layoutInflater) }
     private val editProductViewModel = EditProductViewModel()
+    private val args: DetailFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setDetails()
         return binding.root
     }
 
@@ -38,23 +44,54 @@ class EditProductDetailFragment : Fragment() {
                 }
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
         }
-       fun setDetails() {
-            editProductViewModel.product.observe(viewLifecycleOwner,{
-//                Glide.with(binding.productImage)
-//                    .asBitmap()
-//                    .load(detailViewModel.product.value?.url)
-//                    .into(binding.productImage)
-//                binding.apply {
-//                    categoryText.text=detailViewModel.product.value?.category
-//                    productName.text=detailViewModel.product.value?.productName
-//                    productDetail.text=detailViewModel.product.value?.detail
-//                    textPrice.text=detailViewModel.product.value?.price
-//                    textStock.text=detailViewModel.product.value?.stock.toString()
-//                }
-            })
+        binding.buttonApply.setOnClickListener{
+            updateProduct()
         }
+
+
+    }
+    private fun updateProduct(){
+        if(isNull()){
+            editProductViewModel.updateProduct(
+                Product(
+                productName = binding.textFieldProductName.editText?.text.toString(),
+                category = binding.textFieldCategory.text.toString(),
+                url = binding.textFieldUrl.editText?.text.toString(),
+                stock = binding.textFieldStock.editText?.text.toString().toInt(),
+                detail = binding.textFieldDetail.editText?.text.toString(),
+                id = editProductViewModel.product.value!!.id,
+                price = binding.textFieldPrice.editText?.text.toString()
+            )
+            )
+        }
+        findNavController().navigate(EditProductDetailFragmentDirections.actionEditProductDetailFragmentToDetailFragment(editProductViewModel.product.value!!))
+    }
+
+    fun setDetails() {
+        editProductViewModel.setProduct(args.product)
+        editProductViewModel.product.observe(viewLifecycleOwner,{
+                textFieldProductName.editText?.setText(editProductViewModel.product.value?.productName.toString())
+                categorySpinner.post {
+                    categorySpinner.setSelection(resources.getStringArray(R.array.category).toList().indexOf(editProductViewModel.product.value?.category.toString()))
+                }
+                textFieldUrl.editText?.setText(editProductViewModel.product.value?.url.toString())
+                textFieldStock.editText?.setText(editProductViewModel.product.value?.stock.toString())
+                textFieldDetail.editText?.setText(editProductViewModel.product.value?.detail)
+                textFieldPrice.editText?.setText(editProductViewModel.product.value?.price)
+
+        })
+    }
+    private fun isNull():Boolean {
+        if(
+            binding.textFieldProductName.editText?.text.isNullOrEmpty()&&
+            binding.textFieldCategory.text.isNullOrEmpty()&&
+            binding.textFieldUrl.editText?.text.isNullOrEmpty()&&
+            binding.textFieldStock.editText?.text.isNullOrEmpty()&&
+            binding.textFieldDetail.editText?.text.isNullOrEmpty()&&
+            binding.textFieldPrice.editText?.text.isNullOrEmpty()
+        ){return false}
+        return true
     }
 }

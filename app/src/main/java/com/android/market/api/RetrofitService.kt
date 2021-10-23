@@ -3,6 +3,8 @@ package com.android.market.api
 import com.android.market.data.Product
 
 import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 const val BASE_URL ="https://616f2161715a630017b39b39.mockapi.io/api/"

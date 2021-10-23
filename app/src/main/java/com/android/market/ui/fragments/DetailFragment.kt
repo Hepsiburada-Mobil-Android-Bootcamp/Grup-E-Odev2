@@ -7,12 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.android.market.databinding.FragmentDetailBinding
 import android.content.DialogInterface
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.android.market.MainActivity
 import com.android.market.R
 import com.android.market.ui.viewModels.DetailViewModel
 import com.bumptech.glide.Glide
+import com.google.android.material.navigation.NavigationBarItemView
 
 
 class DetailFragment : Fragment() {
@@ -32,12 +35,12 @@ class DetailFragment : Fragment() {
         detailViewModel.getProduct(args.product.id)
         setDetails()
         binding.deleteButton.setOnClickListener{
-            val diaBox = askDelete()
-            diaBox!!.show()
+            askDelete()!!.show()
         }
         binding.editButton.setOnClickListener{
             findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToEditProductDetailFragment(args.product))
         }
+
 
     }
 

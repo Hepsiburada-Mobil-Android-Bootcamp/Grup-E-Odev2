@@ -47,7 +47,6 @@ class AddNewProductFragment : BottomSheetDialogFragment() {
         }
         binding.buttonAdd.setOnClickListener{
             if(isNull()){
-                println("crash")
                 addNewProductViewModel.addProduct(Product(
                     productName = binding.textFieldProductName.editText?.text.toString(),
                     category = binding.textFieldCategory.text.toString(),

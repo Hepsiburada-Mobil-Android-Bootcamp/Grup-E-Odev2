@@ -46,6 +46,7 @@
             app:argType="com.android.market.data.Product" />
         <action
             android:id="@+id/action_editProductDetailFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/detailFragment"/>
     </fragment>
 </navigation>

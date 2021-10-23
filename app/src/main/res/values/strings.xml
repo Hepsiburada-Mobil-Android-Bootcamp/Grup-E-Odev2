@@ -7,6 +7,17 @@
     <string-array name="category">
         <item>Select Item</item>
         <item>Mercury</item>
+        <item>Meyve</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string-array name="categoryNames">
+        <item>Mercury</item>
+        <item>Meyve</item>
         <item>Venus</item>
         <item>Earth</item>
         <item>Mars</item>
@@ -15,5 +26,4 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
-
 </resources>
