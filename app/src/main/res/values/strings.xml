@@ -16,6 +16,18 @@
         <item>Paketli Gıda</item>
     </string-array>
 
+    <string-array name="categoryNames">
+        <item>All</item>
+        <item>Meyve</item>
+        <item>Sebze</item>
+        <item>İçecek</item>
+        <item>Temel Gıda</item>
+        <item>Hazır Gıda</item>
+        <item>Bakliyat</item>
+        <item>Et</item>
+        <item>Paketli Gıda</item>
+    </string-array>
+
     <string name="food">EFSANE LEZZETLER</string>
     <string name="delivery">HIZLI TESLİMAT</string>
     <string name="payment">HIZLI ÖDEME</string>

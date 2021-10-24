@@ -10,23 +10,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DetailViewModel : ViewModel() {
-    private val _product = MutableLiveData<Product>()
-    var product: LiveData<Product> = _product
 
-    fun editProduct(productItem: Product){
-        Retrofit.service.updateProduct(productItem.id,productItem).enqueue(object: Callback<Product> {
-            override fun onResponse(call: Call<Product>, response: Response<Product>) {
-                if (response.isSuccessful){
-                    _product.value=response.body()
-                    product=_product
-                }
-            }
+    private val _product = MutableLiveData<Product?>()
+    var product: LiveData<Product?> = _product
 
-            override fun onFailure(call: Call<Product>, t: Throwable) {
-                println(t.message)
-            }
-        })
-    }
     fun getProduct(id:String){
         Retrofit.service.getProduct(id).enqueue(object: Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
