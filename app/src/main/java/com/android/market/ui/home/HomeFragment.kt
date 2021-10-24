@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.android.market.R
 import com.android.market.data.Product
 import com.android.market.databinding.FragmentHomePageBinding
@@ -48,6 +49,9 @@ class HomeFragment:Fragment() {
                 requireActivity().supportFragmentManager,
                 "BottomSheetDialog"
             )
+        }
+        binding.profileButton.setOnClickListener{
+            it.findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
         }
 
     }
