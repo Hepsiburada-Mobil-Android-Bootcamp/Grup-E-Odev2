@@ -26,6 +26,10 @@ class LoginPageFragment: Fragment() {
         binding.doNotAccount.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginPageFragment2_to_signUpFragment)
         }
+        binding.loginButton.setOnClickListener{
+            it.findNavController().navigate(R.id.action_loginPageFragment2_to_mainActivity)
+            activity?.finish()
+        }
     }
 
 }
