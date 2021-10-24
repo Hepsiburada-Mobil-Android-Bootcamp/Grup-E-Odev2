@@ -7,5 +7,6 @@
     <string name="forgot_pass">Forgot Your Password?</string>
     <string name="by_tapping_">Or Continue With</string>
     <string name="existingAccount">already have an account?</string>
+    <string name="dontaccount">Do not have an account?Register Here!</string>
 
 </resources>

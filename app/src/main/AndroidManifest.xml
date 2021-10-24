@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Market">
         <activity
-            android:name=".UserActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".UserActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

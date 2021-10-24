@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="450dp"
         android:background="@drawable/ic_pattern"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf = "parent"
+        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="MissingConstraints"
@@ -24,26 +25,27 @@
         android:layout_width="194dp"
         android:layout_height="170dp"
         android:background="@drawable/logo"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/foodGroceryText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="19dp" />
+        app:layout_constraintTop_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/foodGroceryText"
-        android:layout_width="215dp"
-        android:layout_height="83dp"
+        android:layout_width="357dp"
+        android:layout_height="38dp"
         android:fontFamily="@font/viga"
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="@string/FoodGrocery"
         android:textAppearance="@style/FoodGrocery"
         android:textColor="#53E88B"
+        app:layout_constraintBottom_toTopOf="@id/text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="199dp" />
-
+        app:layout_constraintTop_toBottomOf="@id/logo" />
 
     <TextView
         android:id="@+id/text"
@@ -55,10 +57,12 @@
         android:lineSpacingExtra="6sp"
         android:text="@string/text"
         android:textAppearance="@style/text"
-        android:translationY="-3sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="305dp" />
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toTopOf="@id/email_input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/foodGroceryText"
+         />
 
     <RelativeLayout
         android:id= "@id/email_input"
@@ -66,9 +70,12 @@
         android:layout_height="wrap_content"
         android:background="@drawable/form_border"
         tools:ignore="MissingConstraints"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toTopOf="@id/password_input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text">
 
         <!-- INPUT -->
@@ -100,16 +107,18 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@id/password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:background="@drawable/form_border"
+        app:layout_constraintBottom_toTopOf="@id/forgot_pass"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_input"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="34dp">
+        >
 
         <!-- INPUT -->
         <EditText
@@ -141,6 +150,7 @@
 
     </RelativeLayout>
 
+
     <TextView
         android:id="@+id/forgot_pass"
         android:layout_width="0dp"
@@ -151,23 +161,47 @@
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="8sp"
         android:text="@string/forgot_pass"
-        android:textColor="#53E88B"
         android:textAppearance="@style/forgot_pass"
-        android:translationY="-3.93sp"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="503dp"
-        tools:ignore="MissingConstraints" />
+        android:textColor="#53E88B"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/login_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#53E88B"
         android:text="Login"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="530dp" />
+        app:layout_constraintBottom_toTopOf="@id/doNotAccount"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forgot_pass" />
+
+    <TextView
+        android:id="@+id/doNotAccount"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/dontaccount"
+        android:textAppearance="@style/forgot_pass"
+        android:textColor="#53E88B"
+        app:layout_constraintBottom_toTopOf="@id/by_tapping_"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
     <TextView
         android:id="@+id/by_tapping_"
@@ -179,20 +213,26 @@
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="8sp"
         android:text="@string/by_tapping_"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:textAppearance="@style/by_tapping_"
-        android:translationY="-3.93sp"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="603dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doNotAccount"/>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="651dp">
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/by_tapping_">
 
         <ImageView
             android:layout_width="38dp"
@@ -218,8 +258,6 @@
             android:src="@drawable/google" />
 
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
