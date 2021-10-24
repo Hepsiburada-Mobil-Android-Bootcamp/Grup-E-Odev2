@@ -17,7 +17,7 @@ class HomeFragment:Fragment() {
     val binding  : FragmentHomePageBinding  by lazy { FragmentHomePageBinding.inflate(layoutInflater) }
     private val viewModel = HomeViewModel()
     var list:List<Product> = listOf()
-    private val categoryList = resources.getStringArray(R.array.categoryNames).toList()
+    private var categoryList = emptyList<String>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,6 +28,7 @@ class HomeFragment:Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        categoryList=resources.getStringArray(R.array.categoryNames).toList()
         viewModel.productList()
         viewModel.product.observe(viewLifecycleOwner,{
             binding.recycler1.adapter=CategoryListAdapter(categoryList,viewModel)
