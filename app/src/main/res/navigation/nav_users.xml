@@ -19,7 +19,11 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.android.market.ui.fragments.SignUpFragment"
-        android:label="SignUpFragment" />
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginPageFragment2"
+            app:destination="@id/loginPageFragment2" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.android.market.MainActivity"
