@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/signText" />
+        app:layout_constraintBottom_toTopOf="@id/signText" />
 
 
     <View
@@ -44,8 +44,7 @@
         app:layout_constraintBottom_toTopOf="@id/signText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="199dp" />
+        />
 
 
     <TextView
@@ -61,11 +60,11 @@
         android:translationY="-3sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/username_input"
+        app:layout_constraintBottom_toTopOf="@id/username_layout"
         app:layout_constraintTop_toBottomOf="@id/foodGroceryText" />
 
     <RelativeLayout
-        android:id= "@id/username_input"
+        android:id= "@+id/username_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/form_border"
@@ -75,15 +74,15 @@
         android:layout_marginLeft="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/email_input"
-        app:layout_constraintTop_toBottomOf="@+id/signText">
+        app:layout_constraintBottom_toTopOf="@id/email_layout"
+        app:layout_constraintTop_toBottomOf="@id/signText">
 
         <!-- INPUT -->
         <EditText
             android:id="@+id/username_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/username_icon"
+            android:layout_toRightOf="@id/username_icon"
             android:background="@android:color/transparent"
             android:fontFamily="@font/viga"
             android:hint="Username"
@@ -108,7 +107,7 @@
 
 
     <RelativeLayout
-        android:id="@id/email_input"
+        android:id="@+id/email_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -117,8 +116,8 @@
         android:background="@drawable/form_border"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/password_input"
-        app:layout_constraintTop_toBottomOf="@id/username_input"
+        app:layout_constraintBottom_toTopOf="@id/password_layout"
+        app:layout_constraintTop_toBottomOf="@id/username_layout"
         >
 
         <!-- INPUT -->
@@ -129,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
-            android:layout_toRightOf="@+id/email_icon"
+            android:layout_toRightOf="@id/email_icon"
             android:background="@android:color/transparent"
             android:fontFamily="@font/viga"
             android:hint="Email"
@@ -152,24 +151,24 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/password_input"
+        android:id="@id/password_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:background="@drawable/form_border"
-        app:layout_constraintTop_toBottomOf="@+id/email_input"
+        app:layout_constraintTop_toBottomOf="@id/email_layout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/rePassword_input">
+        app:layout_constraintBottom_toTopOf="@id/rePassword_layout">
 
         <!-- INPUT -->
         <EditText
             android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/password_icon"
+            android:layout_toRightOf="@id/password_icon"
             android:background="@android:color/transparent"
             android:fontFamily="@font/viga"
             android:hint="Password"
@@ -199,7 +198,7 @@
 
 
     <RelativeLayout
-        android:id="@id/rePassword_input"
+        android:id="@+id/rePassword_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -209,14 +208,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/register_button"
-        app:layout_constraintTop_toBottomOf="@+id/password_input">
+        app:layout_constraintTop_toBottomOf="@id/password_layout">
 
         <!-- INPUT -->
         <EditText
             android:id="@+id/rePassword_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/rePassword_icon"
+            android:layout_toRightOf="@id/rePassword_icon"
             android:background="@android:color/transparent"
             android:fontFamily="@font/viga"
             android:hint="Re-Password"
@@ -243,18 +242,18 @@
 
     </RelativeLayout>
 
+
     <Button
         android:id="@+id/register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#53E88B"
         android:text="Create Account"
-        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/alreadyText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rePassword_input"
-        app:layout_constraintBottom_toTopOf="@id/alreadyText"/>
-
+        app:layout_constraintTop_toBottomOf="@id/rePassword_layout" />
 
     <TextView
         android:id="@+id/alreadyText"
