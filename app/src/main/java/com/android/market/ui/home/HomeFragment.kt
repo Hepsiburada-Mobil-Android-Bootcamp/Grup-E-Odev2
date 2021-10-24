@@ -30,9 +30,8 @@ class HomeFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         categoryList=resources.getStringArray(R.array.categoryNames).toList()
         viewModel.productList()
+        binding.recycler1.adapter=CategoryListAdapter(categoryList,viewModel)
         viewModel.product.observe(viewLifecycleOwner,{
-            binding.recycler1.adapter=CategoryListAdapter(categoryList,viewModel)
-
             list = viewModel.product.value as List<Product>
             binding.recycler2.adapter=ProductListAdapter(list,viewModel,categoryList).also {
                 it.notifyDataSetChanged()

@@ -37,7 +37,14 @@ class ProductListAdapter (private val productsList:List<Product>,val homeVM:Home
     override fun onBindViewHolder(holder: ProductListAdapter.ProductViewHolder, position: Int) {
         //Change color
         when(categoryList.indexOf(homeVM.categoryName)){
-            1->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#ffffff"))
+            1->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#ffc8ba"))
+            2->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#fff1ba"))
+            3->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#e3ffba"))
+            4->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#c1ffba"))
+            5->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#baffe2"))
+            6->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#baedff"))
+            7->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#c8baff"))
+            8->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#f4baff"))
         }
 
         Glide.with(binding.imgProduct)
