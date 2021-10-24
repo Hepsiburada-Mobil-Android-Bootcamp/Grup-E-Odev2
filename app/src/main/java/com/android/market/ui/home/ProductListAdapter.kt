@@ -1,6 +1,7 @@
 package com.android.market.ui.home
 
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,9 +16,8 @@ import com.android.market.databinding.ItemProductListCardBinding
 import com.bumptech.glide.Glide
 
 
-class ProductListAdapter (private val productsList:List<Product>) :
-    RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>(),
-    Filterable{
+class ProductListAdapter (private val productsList:List<Product>,val homeVM:HomeViewModel,private val categoryList:List<String>) :
+    RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>(){
 
     private var _binding: ItemProductListCardBinding? = null
     private val binding get() = _binding!!
@@ -35,11 +35,16 @@ class ProductListAdapter (private val productsList:List<Product>) :
     }
 
     override fun onBindViewHolder(holder: ProductListAdapter.ProductViewHolder, position: Int) {
+        //Change color
+        when(categoryList.indexOf(homeVM.categoryName)){
+            1->binding.itemProductLayout.setBackgroundColor(Color.parseColor("#ffffff"))
+        }
 
         Glide.with(binding.imgProduct)
             .asBitmap()
             .load(productsList[position].url)
             .into(binding.imgProduct)
+
         binding.productName.text = productsList[position].productName
         holder.itemView.setOnClickListener{
             it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(productsList[position]))
@@ -56,8 +61,5 @@ class ProductListAdapter (private val productsList:List<Product>) :
     }
     override fun getItemCount(): Int = productsList.size
 
-    override fun getFilter(): Filter {
-        TODO("Not yet implemented")
-    }
 
 }

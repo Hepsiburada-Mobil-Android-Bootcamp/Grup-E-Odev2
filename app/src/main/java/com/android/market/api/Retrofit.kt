@@ -1,5 +1,7 @@
 package com.android.market.api
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.android.market.data.Product
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,20 +22,7 @@ object Retrofit {
     val service: RetrofitService = retrofit.create(RetrofitService::class.java)
 
 
-    fun getAllProducts():List<Product>{
-        var list: List<Product> = listOf()
-        service.getAllProducts().enqueue(object :
-            Callback<List<Product>> {
-            override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
-                list=response.body() as List<Product>
-            }
 
-            override fun onFailure(call: Call<List<Product>>, t: Throwable) {
-
-            }
-        })
-        return  list
-    }
 
     fun update(product: Product) {
         service.updateProduct("${product.id}", product).enqueue(object : Callback<Product> {

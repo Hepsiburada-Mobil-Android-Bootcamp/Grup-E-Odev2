@@ -8,6 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import android.content.Intent
+
+
+
 
 
 class SplashFragment : Fragment() {
@@ -17,7 +21,8 @@ class SplashFragment : Fragment() {
     ): View? {
         Handler().postDelayed({
             if(onBoardingFinished()){
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment2)
+                findNavController().navigate(R.id.action_splashFragment_to_mainActivity)
+                activity?.finish()
             }else{
                 findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
             }
