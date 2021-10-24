@@ -35,4 +35,12 @@
     <string name="lorem2">Temassız ve Hızlı teslimat ile güvenli ödeme seçenekleri</string>
     <string name="lorem3">Tek tıkla öde, bekleme!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="FoodGrocery">Food Grocery</string>
+    <string name="text">Login To Your Account</string>
+    <string name="signUpText">Sign Up For Free</string>
+    <string name="forgot_pass">Forgot Your Password?</string>
+    <string name="by_tapping_">Or Continue With</string>
+    <string name="existingAccount">already have an account?</string>
+    <string name="dontaccount">Do not have an account?Register Here!</string>
+
 </resources>
